@@ -1,6 +1,17 @@
 import java.util.List;
 
 public class Queue {
+    // ADVENTURE: make sure only one Queue
+    private static Queue instance = null;
+    protected Queue() {
+        // exists only to prevent instantiation
+    }
+    public static Queue getInstance() {
+        if(instance == null) {
+            instance = new Queue();
+        }
+        return instance;
+    }
 
     // write a class that uses only static variables and static methods that is a queue
     // uses an array of length 10 to hold the values in the queue
